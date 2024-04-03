@@ -6,3 +6,39 @@ project_name:
 module_name:
     type: str
     help: What is your Python module name?
+
+some_var1:
+    type: int
+    help: Value for some_var1
+    choices:
+    - 1
+    - 2
+
+some_var2:
+    type: str
+    help: Value for some_var2
+    choices:
+        a:
+            value: "a"
+            validator: '{% if some_var1 == 1 %}{% else %}does not apply{% endif %}'
+        b:
+            value: "b"
+            validator: '{% if some_var1 == 2 %}{% else %}does not apply{% endif %}'
+
+# lint_style:
+#   type: str
+#   help: Which linting style to use - ruff vs. OptiML setting
+#   choices:
+#   - optiml
+#   - ruff
+
+# dep_mgr:
+#   type: str
+#   help: Python package and dependency manager
+#   default: pip_multi_compile
+#   choices:
+#     pip_multi_compile: pip_multi_compile
+#     pdm:
+#       value: pdm
+#       validator: "{% if lint_style != 'ruff' %}Requires Ruff as a Linter!{% endif %}"
+    
