@@ -25,12 +25,12 @@ some_var2:
             value: "b"
             validator: '{% if some_var1 == 2 %}{% else %}does not apply{% endif %}'
 
-# lint_style:
-#   type: str
-#   help: Which linting style to use - ruff vs. OptiML setting
-#   choices:
-#   - optiml
-#   - ruff
+lint_style:
+  type: str
+  help: Which linting style to use - ruff vs. OptiML setting
+  choices:
+  - optiml
+  - ruff
 
 # dep_mgr:
 #   type: str
